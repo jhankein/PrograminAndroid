@@ -10,18 +10,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.saaibi.parcial.Controller.ApplicationController;
-import com.example.saaibi.parcial.Controller.UserController;
-import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity  {
     private EditText campoUserName;
     private EditText campoPassword;
     private TextInputLayout tilNombre;
-    private TextInputLayout tilTelefono;
+    private TextInputLayout tilPassword;
     ApplicationController appController;
 
     @Override
@@ -39,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Referencias TILs
         tilNombre = (TextInputLayout) findViewById(R.id.til_nombre);
-        tilTelefono = (TextInputLayout) findViewById(R.id.til_password);
+        tilPassword = (TextInputLayout) findViewById(R.id.til_password);
 
 
 
@@ -47,7 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appController.userCreate();
+                //appController.userCreate();
+              //  view.setOnClickListener(new CreateUsersOnClickListener());
             }
         });
         // Referencia Botón
@@ -56,19 +54,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nombre = tilNombre.getEditText().getText().toString();
-                String password = tilTelefono.getEditText().getText().toString();
+                String password = tilPassword.getEditText().getText().toString();
 
                 appController.authenticate(nombre,password);
             }
         });
     }
-
-    public void login (View view) {
-        //System.out.println(userName.getText().toString() + " <:> " + password.getText().toString());
-        //appController.authenticate(userName.getText().toString(), password.getText().toString());
-    }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

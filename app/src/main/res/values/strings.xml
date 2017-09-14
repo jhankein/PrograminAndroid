@@ -3,6 +3,17 @@
     <string name="action_settings">Settings</string>
     <string name="hint_nombre">Nombre</string>
     <string name="hint_password">Password</string>
-    <string name="title_activity_admin">AdminActivity</string>
     <string name="title_activity_user">Events Cool</string>
+    <string name="title_activity_admin">Events Cool</string>
+    <string name="hint_usersName">UserName</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_lastName">Lats Name</string>
+    <string name="hint_age">Age</string>
+    <string name="hint_nameEvent">Nombre Evento</string>
+    <string name="hint_attenEvent">Encargado del Evento</string>
+    <string name="hint_cityEvent">Regíon/Ciudad</string>
+    <string name="hint_dateEvent">Seleccione Fecha</string>
+    <string name="hint_hourEvent">Seleccione Hora</string>
+    <string name="hint_requirementEvent">Requisitos</string>
+    <string name="hint_descriptionEvent">Descripción</string>
 </resources>

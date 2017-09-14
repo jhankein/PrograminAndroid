@@ -1,11 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.saaibi.parcial.Views.AdminActivity"
     tools:showIn="@layout/activity_admin">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_nameEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_nameEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_nameEvent"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spiTipeEvent"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="45dp"
+            app:ms_arrowColor="@color/colorAccent"
+            app:ms_arrowSize="20dp"
+            app:ms_errorColor="@color/colorRed"
+            app:ms_floatingLabelColor="@color/colorAccent"
+            app:ms_floatingLabelText="Seleccione uno"
+            app:ms_highlightColor="@color/colorPrimaryDark"
+            app:ms_hint="Escoga un Evento"
+            app:ms_multiline="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_attenEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_attenEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_attenEvent"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_cityEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_cityEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_cityEvent"
+                android:inputType="text"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_dateEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_dateEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_dateEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_dateEvent"
+                android:inputType="date"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_hourEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_hourEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_hourEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_hourEvent"
+                android:inputType="time"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_requirementEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_requirementEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_requirementEvent"
+                android:inputType="text"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_descriptionEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/campo_descriptionEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_descriptionEvent"
+                android:inputType="text"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_crearEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Crear Evento"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>

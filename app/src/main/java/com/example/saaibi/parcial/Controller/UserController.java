@@ -23,15 +23,11 @@ public class UserController extends UsersDbHelper {
     public boolean create(User user){
         System.out.println("user: " + user.toContentValues());
 
-
         SQLiteDatabase db = this.getWritableDatabase();
 
-
-
-       boolean isCreate = db.insert(UserContract.UserEntry.TABLE_NAME, null, user.toContentValues()) > 0;
+        boolean isCreate = db.insert(UserContract.UserEntry.TABLE_NAME, null, user.toContentValues()) > 0;
 
         db.close();
-
         return isCreate;
     }
 
@@ -44,9 +40,7 @@ public class UserController extends UsersDbHelper {
 
     public boolean dropTable(){
         SQLiteDatabase db = this.getWritableDatabase();
-
         onUpgrade(db,1,2);
-
         return true;
     }
 
