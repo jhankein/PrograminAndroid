@@ -87,8 +87,24 @@ public class EventController extends EventDbHelper {
 
         db.close();
 
-        return  isUpdate;
+        return isUpdate;
 
+    }
+
+    public List<Event> filtrarporTipo(String tipo) {
+        List<Event> listEventos = new ArrayList<>();
+        Cursor cursor = getAllEvents();
+        cursor.moveToFirst();
+        Event userAux;
+        while (!cursor.isAfterLast()) {
+            userAux = new Event(cursor);
+            String type = userAux.getTipeEvent().toString();
+            if (tipo.equals(type)) {
+                listEventos.add(userAux);
+            }
+            cursor.moveToNext();
+        }
+        return listEventos;
     }
 
     public boolean delete(int contatoID){
