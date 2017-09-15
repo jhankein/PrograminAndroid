@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.saaibi.parcial.Domain.Event;
@@ -41,6 +42,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.txtTypeEvent.setText(eventList.get(position).getTipeEvent());
         holder.txtDateEvent.setText(eventList.get(position).getDateEvent());
         holder.txtHourEvent.setText(eventList.get(position).getHourEvent());
+       //holder.linIdEvent.setText(Integer.toString(eventList.get(position).get_id()));
     }
 
     @Override
@@ -58,9 +60,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
                 txtTypeEvent,
                 txtDateEvent,
                 txtHourEvent;
+        private LinearLayout linIdEvent;
 
         public EventViewHolder(View v) {
             super(v);
+            linIdEvent = (LinearLayout) v.findViewById(R.id.lin_idEvent);
             txtIdEvent = (TextView) v.findViewById(R.id.txt_idEvent);
             txtNameEvent = (TextView) v.findViewById(R.id.txt_nameEvent);
             txtTypeEvent =(TextView) v.findViewById(R.id.txt_typeEvent);

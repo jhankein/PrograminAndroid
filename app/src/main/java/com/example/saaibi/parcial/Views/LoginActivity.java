@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity  {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //appController.userCreate();
+                appController.userCreate();
               //  view.setOnClickListener(new CreateUsersOnClickListener());
             }
         });

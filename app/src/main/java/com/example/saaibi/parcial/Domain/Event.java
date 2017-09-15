@@ -14,6 +14,9 @@ import java.util.Date;
 
 public class Event {
 
+    public Event() {
+    }
+
     public   int _id;
     public   String nameEvent;
     public   String tipeEvent;
