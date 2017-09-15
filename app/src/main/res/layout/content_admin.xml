@@ -276,6 +276,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorAccent"
             android:text="Crear Evento"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:onClick="GuardarDatosEvento"/>
     </LinearLayout>
 </LinearLayout>

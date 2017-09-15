@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Views.LandingActivity"
-            android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Views.AdminActivity"
             android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.UserActivity"
+            android:label="@string/title_activity_user"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

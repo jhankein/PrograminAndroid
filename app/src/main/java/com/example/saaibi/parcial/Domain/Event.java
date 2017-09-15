@@ -14,6 +14,7 @@ import java.util.Date;
 
 public class Event {
 
+    public   int _id;
     public   String nameEvent;
     public   String tipeEvent;
     public   String attenEvent;
@@ -35,7 +36,9 @@ public class Event {
         this.descriptionEvent = descriptionEvent;
 
     }
+
     public Event (Cursor cursor) {
+        _id = cursor.getInt(cursor.getColumnIndex(EventContract.EventEntry._ID  ));
         nameEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.NAME_EVENT  ));
         tipeEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.TIPE_EVENT));
         attenEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.ATTEN_EVENT));
@@ -58,6 +61,14 @@ public class Event {
         values.put(EventContract.EventEntry.REQUIREMENT_EVENT, getRequirementEvent());
         values.put(EventContract.EventEntry.DESCRIPTION_EVENT, getDescriptionEvent());
         return values;
+    }
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
     public String getNameEvent() {

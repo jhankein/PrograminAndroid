@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class EventDbHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "ParcialPM.db";
+    public static final String DATABASE_NAME = "Event.db";
 
     public EventDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -19,16 +19,16 @@ public class EventDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + EventContract.EventEntry.TABLE_NAME + " ("
-                + "id" + " PRIMARY KEY NOT NULL,"
+        db.execSQL("CREATE TABLE " + EventContract.EventEntry.TABLE_NAME + "("
+                + " _id integer primary key autoincrement, "
                 + EventContract.EventEntry.NAME_EVENT + " TEXT NOT NULL,"
                 + EventContract.EventEntry.TIPE_EVENT + " TEXT NOT NULL,"
                 + EventContract.EventEntry.ATTEN_EVENT + " TEXT NOT NULL,"
                 + EventContract.EventEntry.CITY_EVENT + " TEXT NOT NULL,"
-                + EventContract.EventEntry.DATE_EVENT + " INT NOT NULL)"
-                + EventContract.EventEntry.HOUR_EVENT + " INT NOT NULL)"
-                + EventContract.EventEntry.REQUIREMENT_EVENT + " INT NOT NULL)"
-                + EventContract.EventEntry.DESCRIPTION_EVENT + " INT NOT NULL)"
+                + EventContract.EventEntry.DATE_EVENT + " INT NOT NULL,"
+                + EventContract.EventEntry.HOUR_EVENT + " INT NOT NULL,"
+                + EventContract.EventEntry.REQUIREMENT_EVENT + " INT NOT NULL,"
+                + EventContract.EventEntry.DESCRIPTION_EVENT + " INT NOT NULL )"
         );
     }
 

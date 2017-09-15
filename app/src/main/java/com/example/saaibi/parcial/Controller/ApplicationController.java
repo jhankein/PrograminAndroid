@@ -8,8 +8,8 @@ import android.widget.Toast;
 
 import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.Repository.UsersDbHelper;
+import com.example.saaibi.parcial.Views.UserActivity;
 import com.example.saaibi.parcial.Views.AdminActivity;
-import com.example.saaibi.parcial.Views.LandingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class ApplicationController extends Application {
 
     public void userCreate() {
         User person3 = new User("yesid", "Yesid", "Florez", "1234", "Admin", 21);
-        boolean usersCreate = new UserController(getApplicationContext()).create(person3);
+        boolean usersCreate = new UserController(this.getApplicationContext()).create(person3);
         if (usersCreate)
             Toast.makeText(getApplicationContext(), "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
         else
@@ -42,7 +42,11 @@ public class ApplicationController extends Application {
     }
 
     public void droptable(){
-        boolean usersCreate = new UserController(this.getApplicationContext()).dropTable();
+        boolean isDeleted = new UserController(this.getApplicationContext()).dropTable();
+        if (isDeleted)
+            Toast.makeText(getApplicationContext(), "Tabla eliminada ", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getApplicationContext(), "Tabla no eliminada", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -88,8 +92,8 @@ public class ApplicationController extends Application {
                     intent.setClass(getApplicationContext(), AdminActivity.class);
                     intent.setAction(AdminActivity.class.getName());
                 }else{
-                    intent.setClass(getApplicationContext(), LandingActivity.class);
-                    intent.setAction(LandingActivity.class.getName());
+                    intent.setClass(getApplicationContext(), UserActivity.class);
+                    intent.setAction(UserActivity.class.getName());
                 }
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
 
@@ -99,6 +103,4 @@ public class ApplicationController extends Application {
             }
         }
     }
-
-
 }
