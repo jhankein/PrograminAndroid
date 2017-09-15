@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.saaibi.parcial.Controller.EventController;
 import com.example.saaibi.parcial.Domain.Event;
@@ -46,6 +47,7 @@ public class UserActivity extends AppCompatActivity {
         eventAdapter = new EventAdapter(this , appController.fillEvents());
         recyclerStudents.setAdapter(eventAdapter);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,5 +65,4 @@ public class UserActivity extends AppCompatActivity {
         Snackbar.make(view, "hola!!!!!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
-
 }
