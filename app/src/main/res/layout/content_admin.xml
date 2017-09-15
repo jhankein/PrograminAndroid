@@ -32,7 +32,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/camp_nombre"></ImageView>
+
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_nameEvent"
@@ -65,12 +66,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/tip" />
 
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spiTipeEvent"
-                    android:layout_width="194dp"
-                    android:layout_height="46dp"
+                    android:layout_width="186dp"
+                    android:layout_height="93dp"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="45dp"
@@ -92,10 +93,11 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/imencargado" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_attenEvent"
@@ -128,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/lugar" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_cityEvent"
@@ -161,7 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/fecha" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_dateEvent"
@@ -194,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/relojito" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_hourEvent"
@@ -227,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/requisitos" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_requirementEvent"
@@ -259,7 +261,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@mipmap/descrip" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/til_descriptionEvent"

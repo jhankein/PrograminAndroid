@@ -1,5 +1,6 @@
 package com.example.saaibi.parcial.Views;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,8 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.saaibi.parcial.Controller.EventController;
+import com.example.saaibi.parcial.Domain.Event;
 import com.example.saaibi.parcial.R;
 import com.example.saaibi.parcial.Views.Adapter.EventAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UserActivity extends AppCompatActivity {
@@ -50,6 +55,8 @@ public class UserActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void ShowEvent(View view) {
 
