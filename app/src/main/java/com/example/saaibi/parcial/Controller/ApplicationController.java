@@ -32,7 +32,7 @@ public class ApplicationController extends Application {
     }
 
     public void userCreate() {
-        User person3 = new User("yesid", "Yesid", "Florez", "1234", "Admin", 21);
+        User person3 = new User("user", "user", "user", "1234", "User", 21);
         boolean usersCreate = new UserController(this.getApplicationContext()).create(person3);
         if (usersCreate)
             Toast.makeText(getApplicationContext(), "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
