@@ -1,6 +1,5 @@
 package com.example.saaibi.parcial.Views;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,15 +8,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
 
 import com.example.saaibi.parcial.Controller.EventController;
-import com.example.saaibi.parcial.Domain.Event;
 import com.example.saaibi.parcial.R;
 import com.example.saaibi.parcial.Views.Adapter.EventAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.ganfra.materialspinner.MaterialSpinner;
 
 
 public class UserActivity extends AppCompatActivity {
@@ -26,6 +26,8 @@ public class UserActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private EventAdapter eventAdapter;
     private EventController appController;
+
+    private MaterialSpinner spiTipeEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,23 @@ public class UserActivity extends AppCompatActivity {
         eventAdapter = new EventAdapter(this , appController.fillEvents());
         recyclerStudents.setAdapter(eventAdapter);
 
+        //Id.R Campos
+        spiTipeEvent = (MaterialSpinner) findViewById(R.id.spiTipeEvent);
+
+        //Manejador del Spinner
+        spiTipeEvent = (MaterialSpinner) findViewById(R.id.spiTipeEvent);
+        List list = new ArrayList();
+        list.add("Cultural");
+        list.add("Gastronomico");
+        list.add("Empresarial");
+        list.add("Social");
+        list.add("Deportivo");
+        list.add("Academico");
+        list.add("Religioso");
+
+        ArrayAdapter arrayadapter = new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, list);
+        arrayadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spiTipeEvent.setAdapter(arrayadapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
