@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.Repository.UsersDbHelper;
-import com.example.saaibi.parcial.Views.UserActivity;
+import com.example.saaibi.parcial.Views.EventActivity;
 import com.example.saaibi.parcial.Views.AdminActivity;
 
 import java.util.ArrayList;
@@ -92,8 +92,8 @@ public class ApplicationController extends Application {
                     intent.setClass(getApplicationContext(), AdminActivity.class);
                     intent.setAction(AdminActivity.class.getName());
                 }else{
-                    intent.setClass(getApplicationContext(), UserActivity.class);
-                    intent.setAction(UserActivity.class.getName());
+                    intent.setClass(getApplicationContext(), EventActivity.class);
+                    intent.setAction(EventActivity.class.getName());
                 }
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
 

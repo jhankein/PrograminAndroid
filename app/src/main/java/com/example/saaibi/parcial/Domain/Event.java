@@ -3,18 +3,21 @@ package com.example.saaibi.parcial.Domain;
 import android.content.ContentValues;
 import android.database.Cursor;
 
+import com.google.gson.annotations.SerializedName;
 
 import com.example.saaibi.parcial.Repository.EventContract;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by SAAIBI on 13/9/2017.
  */
 
-public class Event {
+public class Event implements Serializable {
 
     public Event() {
+
     }
 
     public   int _id;
@@ -26,6 +29,7 @@ public class Event {
     public   String hourEvent;
     public   String requirementEvent;
     public   String descriptionEvent;
+
 
     public Event(String nameEvent, String tipeEvent, String attenEvent, String cityEvent, String dateEvent, String hourEvent, String requirementEvent, String descriptionEvent) {
 
