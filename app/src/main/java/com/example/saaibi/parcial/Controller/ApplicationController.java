@@ -30,14 +30,8 @@ public class ApplicationController extends Application {
         DBHelper = new DBHelper(this.getApplicationContext());
         new AuthenticTask().execute(username, password);
     }
-    public void droptable(){
-        boolean isDeleted = new UserController(this.getApplicationContext()).dropTable();
-        if (isDeleted)
-            Toast.makeText(getApplicationContext(), "Tabla eliminada ", Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(getApplicationContext(), "Tabla no eliminada", Toast.LENGTH_SHORT).show();
 
-    }
+
     private boolean isValidUser(String username, String password) {
         Boolean resp = false;
         for (User person : users) {

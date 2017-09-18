@@ -25,6 +25,7 @@ public class EventDetailActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     eventDetailActivityBinding =
         DataBindingUtil.setContentView(this, R.layout.event_detail_activity);
+
     setSupportActionBar(eventDetailActivityBinding.toolbar);
     displayHomeAsUpEnabled();
     getExtrasFromIntent();

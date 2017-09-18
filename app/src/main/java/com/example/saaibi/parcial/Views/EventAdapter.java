@@ -21,50 +21,50 @@ import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventAdapterViewHolder> {
 
-  private List<Event> eventList;
+    private List<Event> eventList;
 
-  public EventAdapter() {
-    this.eventList = Collections.emptyList();
-  }
-
-  @Override
-  public EventAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    ItemEventBinding itemEventBinding =
-        DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_event,
-            parent, false);
-    return new EventAdapterViewHolder(itemEventBinding);
-  }
-
-  @Override
-  public void onBindViewHolder(EventAdapterViewHolder holder, int position) {
-    holder.bindEvent(eventList.get(position));
-  }
-
-  @Override
-  public int getItemCount() {
-    return eventList.size();
-  }
-
-  public void setEventList(List<Event> eventList) {
-    this.eventList = eventList;
-    notifyDataSetChanged();
-  }
-
-  public static class EventAdapterViewHolder extends RecyclerView.ViewHolder {
-    ItemEventBinding itemEventBinding;
-
-    public EventAdapterViewHolder(ItemEventBinding itemEventBinding) {
-      super(itemEventBinding.itemEvent);
-      this.itemEventBinding = itemEventBinding;
+    public EventAdapter() {
+        this.eventList = Collections.emptyList();
     }
 
-    void bindEvent(Event event) {
-      if (itemEventBinding.getEventViewModel() == null) {
-        itemEventBinding.setEventViewModel(
-            new ItemEventViewModel(event, itemView.getContext()));
-      } else {
-        itemEventBinding.getEventViewModel().setEvent(event);
-      }
+    @Override
+    public EventAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        ItemEventBinding itemEventBinding =
+                DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_event,
+                        parent, false);
+        return new EventAdapterViewHolder(itemEventBinding);
     }
-  }
+
+    @Override
+    public void onBindViewHolder(EventAdapterViewHolder holder, int position) {
+        holder.bindEvent(eventList.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return eventList.size();
+    }
+
+    public void setEventList(List<Event> eventList) {
+        this.eventList = eventList;
+        notifyDataSetChanged();
+    }
+
+    public static class EventAdapterViewHolder extends RecyclerView.ViewHolder {
+        ItemEventBinding itemEventBinding;
+
+        public EventAdapterViewHolder(ItemEventBinding itemEventBinding) {
+            super(itemEventBinding.itemEvent);
+            this.itemEventBinding = itemEventBinding;
+        }
+
+        void bindEvent(Event event) {
+            if (itemEventBinding.getEventViewModel() == null) {
+                itemEventBinding.setEventViewModel(
+                        new ItemEventViewModel(event, itemView.getContext()));
+            } else {
+                itemEventBinding.getEventViewModel().setEvent(event);
+            }
+        }
+    }
 }

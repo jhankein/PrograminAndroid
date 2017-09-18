@@ -10,13 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.saaibi.parcial.Controller.ApplicationController;
+import com.example.saaibi.parcial.Controller.UserController;
+import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.R;
 
 public class LoginActivity extends AppCompatActivity  {
-    private EditText campoUserName;
-    private EditText campoPassword;
     private TextInputLayout tilNombre;
     private TextInputLayout tilPassword;
     ApplicationController appController;
@@ -29,34 +30,23 @@ public class LoginActivity extends AppCompatActivity  {
         setSupportActionBar(toolbar);
 
         appController =(ApplicationController)getApplication();
-
-        // Referencias ETs
-        campoUserName = (EditText) this.findViewById(R.id.campo_nombre);
-        campoPassword = (EditText) this.findViewById(R.id.campo_password);
-
-        // Referencias TILs
         tilNombre = (TextInputLayout) findViewById(R.id.til_nombre);
         tilPassword = (TextInputLayout) findViewById(R.id.til_password);
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //    appController.userCreate();
                  view.setOnClickListener(new CreateUsersOnClickListener());
             }
         });
 
-        // Referencia Botón
         Button botonAceptar = (Button) findViewById(R.id.btnLogin);
         botonAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String nombre = tilNombre.getEditText().getText().toString();
                 String password = tilPassword.getEditText().getText().toString();
-
                 appController.authenticate(nombre,password);
             }
         });
@@ -69,9 +59,14 @@ public class LoginActivity extends AppCompatActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (item.getItemId() == R.id.menu_action_settings) {
+            User person3 = new User("admin", "Admin", "Admin", "1234", "admin", 30);
+            boolean usersCreate = new UserController(this).create(person3);
+            if (usersCreate)
+                Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(this, "No fue posible crear Usuario", Toast.LENGTH_SHORT).show();
+            return usersCreate;
         }
         return super.onOptionsItemSelected(item);
     }

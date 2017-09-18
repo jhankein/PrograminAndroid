@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.saaibi.parcial.Views.LoginActivity">
     <item
-        android:id="@+id/menu_github"
-        android:icon="@mipmap/imencargado"
-        android:orderInCategory="1"
-        android:title="Event Cool"
-        app:showAsAction="always"/>
+        android:id="@+id/menu_sign_out"
+        android:orderInCategory="100"
+        android:title="@string/action_sing_out"
+        app:showAsAction="never" />
 </menu>

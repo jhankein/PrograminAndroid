@@ -25,7 +25,7 @@ public class CreateUsersOnClickListener implements View.OnClickListener {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View formElementsView = inflater.inflate(R.layout.user_form, null, false);
 
-        final EditText userName = (EditText)  formElementsView.findViewById(R.id.campo_userName);
+        final EditText userName = (EditText) formElementsView.findViewById(R.id.campo_userName);
         final EditText name = (EditText) formElementsView.findViewById(R.id.campo_name);
         final EditText lastName = (EditText) formElementsView.findViewById(R.id.campo_lastName);
         final EditText password = (EditText) formElementsView.findViewById(R.id.campo_password);
@@ -39,11 +39,11 @@ public class CreateUsersOnClickListener implements View.OnClickListener {
                             public void onClick(DialogInterface dialog, int id) {
                                 User person3 = new User(userName.getText().toString(), name.getText().toString(), lastName.getText().toString(), password.getText().toString(), "user", Integer.parseInt(age.getText().toString()));
                                 boolean usersCreate = new UserController(context).create(person3);
-                                if (usersCreate) {
+                                if (usersCreate)
                                     Toast.makeText(context, "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
-                                } else {
+                                else
                                     Toast.makeText(context, "No fue posible crear Usuario", Toast.LENGTH_SHORT).show();
-                                }
+
                                 dialog.cancel();
                             }
 

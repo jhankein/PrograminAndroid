@@ -2,11 +2,14 @@ package com.example.saaibi.parcial.Views;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -15,7 +18,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.saaibi.parcial.Controller.EventController;
+import com.example.saaibi.parcial.Controller.UserController;
 import com.example.saaibi.parcial.Domain.Event;
+import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.R;
 
 import java.util.ArrayList;
@@ -66,14 +71,22 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean isDeleted = new EventController(getApplicationContext()).dropTable();
-                if (isDeleted)
-                    Toast.makeText(getApplicationContext(), "Tabla eliminada ", Toast.LENGTH_SHORT).show();
+
+                boolean isDeletedEvent = new EventController(getApplicationContext()).dropTable();
+                boolean isDeletedUser = new UserController(getApplicationContext()).dropTable();
+                if (isDeletedUser)
+                    Toast.makeText(getApplicationContext(), "Tabla Users eliminada ", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(getApplicationContext(), "Tabla no eliminada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Tabla Users no eliminada", Toast.LENGTH_SHORT).show();
+                if (isDeletedEvent)
+                    Toast.makeText(getApplicationContext(), "Tabla Events eliminada ", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(getApplicationContext(), "Tabla Events no eliminada", Toast.LENGTH_SHORT).show();
+
+
+
             }
         });
-
         //Manejador del Spinner
         spiTipeEvent = (MaterialSpinner) findViewById(R.id.spiTipeEvent);
         List list = new ArrayList();
@@ -125,6 +138,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
                     , dia, mes, año);
+            datePickerDialog.updateDate(año, mes, dia);
             datePickerDialog.show();
         }
         if (v == campoHourEvent || v == tilHourEvent) {
@@ -156,6 +170,21 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         }
 
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_sign_out) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

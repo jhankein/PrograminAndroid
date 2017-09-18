@@ -18,7 +18,7 @@ import java.util.List;
  */
 
 public class EventController extends DBHelper {
-
+    List<Event> listEvents = new ArrayList<>();
     public EventController(Context context) {super(context);}
 
     public boolean create(Event event) {
@@ -43,7 +43,7 @@ public class EventController extends DBHelper {
     }
 
     public List<Event> fillEvents (){
-        List<Event> listEvents = new ArrayList<>();
+
         Cursor cursor =  getAllEvents();
         cursor.moveToFirst();
         Event userAux;
@@ -70,6 +70,20 @@ public class EventController extends DBHelper {
         return contato;
     }
 
+    public List<Event> filtrarporFecha(String fecha) {
+        Cursor cursor = getAllEvents();
+        cursor.moveToFirst();
+        Event userAux;
+        while (!cursor.isAfterLast()) {
+            userAux = new Event(cursor);
+            String type = userAux.getDateEvent().toString();
+            if (fecha.equals(type)) {
+                listEvents.add(userAux);
+            }
+            cursor.moveToNext();
+        }
+        return listEvents;
+    }
 
     public boolean update(User user){
 

@@ -5,11 +5,13 @@ import android.database.Cursor;
 
 import com.example.saaibi.parcial.Repository.DBContract;
 
+import java.io.Serializable;
+
 /**
  * Created by SAAIBI on 10/9/2017.
  */
 
-public class User {
+public class User  implements Serializable {
 
     private String userName;
     private String name;

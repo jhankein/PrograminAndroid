@@ -20,19 +20,11 @@ public class EventDetailViewModel {
     return event.getNameEvent();
   }
 
-  public String getAttenEvent() {
+  public String getAttenEvent() {return event.getAttenEvent();}
 
-    return event.getAttenEvent();
-  }
+  public String getTipeEvent() {return event.getTipeEvent();}
 
-  public String getTipeEvent() {
-
-    return event.getTipeEvent();
-  }
-  public String getCityEvent() {
-
-    return event.getCityEvent();
-  }
+  public String getCityEvent() {return event.getCityEvent();}
 
   public String getDateEvent() {
     return event.getDateEvent();
@@ -45,9 +37,11 @@ public class EventDetailViewModel {
   public String getRequirementEvent() {
     return event.getRequirementEvent();
   }
+
   public String getDescriptionEvent() {
     return event.getDescriptionEvent();
   }
+
   public String getPictureProfile() {
     return event.getHourEvent();
   }
