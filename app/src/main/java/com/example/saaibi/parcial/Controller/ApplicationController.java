@@ -30,17 +30,6 @@ public class ApplicationController extends Application {
         DBHelper = new DBHelper(this.getApplicationContext());
         new AuthenticTask().execute(username, password);
     }
-
-    public void userCreate() {
-        User person3 = new User("yesid", "Yesid", "Florez", "1234", "user", 21);
-        boolean usersCreate = new UserController(this.getApplicationContext()).create(person3);
-        if (usersCreate)
-            Toast.makeText(getApplicationContext(), "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(getApplicationContext(), "No fue posible crear el Usuario", Toast.LENGTH_SHORT).show();
-
-    }
-
     public void droptable(){
         boolean isDeleted = new UserController(this.getApplicationContext()).dropTable();
         if (isDeleted)
@@ -49,7 +38,6 @@ public class ApplicationController extends Application {
             Toast.makeText(getApplicationContext(), "Tabla no eliminada", Toast.LENGTH_SHORT).show();
 
     }
-
     private boolean isValidUser(String username, String password) {
         Boolean resp = false;
         for (User person : users) {

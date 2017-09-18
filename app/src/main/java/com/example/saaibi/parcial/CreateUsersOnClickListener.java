@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.saaibi.parcial.Controller.UserController;
+import com.example.saaibi.parcial.Domain.User;
+
 
 /**
  * Created by marcomaddo on 22/04/17.
@@ -17,9 +20,7 @@ public class CreateUsersOnClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
         final Context context = v.getContext();
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View formElementsView = inflater.inflate(R.layout.user_form, null, false);
 
@@ -35,22 +36,13 @@ public class CreateUsersOnClickListener implements View.OnClickListener {
                 .setPositiveButton("siguiente",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-
-                                int contatoNome =  age.getText().hashCode();
-                                System.out.println("age: " + contatoNome);
-
-                                /*
-                                User person3 = new User(userName.getText().toString(), name.getText().toString(), lastName.getText().toString(), password.getText().toString(), "user", age.getText().hashCode());
-
+                                User person3 = new User(userName.getText().toString(), name.getText().toString(), lastName.getText().toString(), password.getText().toString(), "user", Integer.parseInt(age.getText().toString()));
                                 boolean usersCreate = new UserController(context).create(person3);
-
                                 if (usersCreate) {
                                     Toast.makeText(context, "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(context, "No fue posible crear Usuario", Toast.LENGTH_SHORT).show();
                                 }
-*/
-
                                 dialog.cancel();
                             }
 
