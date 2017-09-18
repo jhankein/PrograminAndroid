@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.saaibi.parcial.Domain.Event;
 import com.example.saaibi.parcial.R;
-import com.example.saaibi.parcial.Viewmodel.EventDetailViewModel;
+import com.example.saaibi.parcial.Model.EventDetailViewModel;
 import com.example.saaibi.parcial.databinding.EventDetailActivityBinding;
 
 public class EventDetailActivity extends AppCompatActivity {

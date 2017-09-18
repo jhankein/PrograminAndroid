@@ -1,6 +1,6 @@
 
 
-package com.example.saaibi.parcial.Viewmodel;
+package com.example.saaibi.parcial.Model;
 
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;

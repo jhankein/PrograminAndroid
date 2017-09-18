@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.saaibi.parcial.R;
-import com.example.saaibi.parcial.Viewmodel.ItemEventViewModel;
+import com.example.saaibi.parcial.Model.ItemEventViewModel;
 import com.example.saaibi.parcial.databinding.ItemEventBinding;
 import com.example.saaibi.parcial.Domain.Event;
 

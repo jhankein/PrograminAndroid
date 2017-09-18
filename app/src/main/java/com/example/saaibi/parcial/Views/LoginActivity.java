@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.saaibi.parcial.Controller.ApplicationController;
-import com.example.saaibi.parcial.CreateUsersOnClickListener;
 import com.example.saaibi.parcial.R;
 
 public class LoginActivity extends AppCompatActivity  {

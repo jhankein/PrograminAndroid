@@ -1,4 +1,4 @@
-package com.example.saaibi.parcial;
+package com.example.saaibi.parcial.Views;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.saaibi.parcial.Controller.UserController;
 import com.example.saaibi.parcial.Domain.User;
+import com.example.saaibi.parcial.R;
 
 
 /**

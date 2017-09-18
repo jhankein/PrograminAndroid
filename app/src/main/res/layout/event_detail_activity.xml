@@ -7,7 +7,7 @@
 
         <variable
             name="eventDetailViewModel"
-            type="com.example.saaibi.parcial.Viewmodel.EventDetailViewModel" />
+            type="com.example.saaibi.parcial.Model.EventDetailViewModel" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout

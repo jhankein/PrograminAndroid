@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 
 import com.example.saaibi.parcial.R;
-import com.example.saaibi.parcial.Viewmodel.EventViewModel;
+import com.example.saaibi.parcial.Model.EventViewModel;
 import com.example.saaibi.parcial.databinding.EventActivityBinding;
 
 import java.util.Observable;

@@ -1,5 +1,5 @@
 
-package com.example.saaibi.parcial.Viewmodel;
+package com.example.saaibi.parcial.Model;
 
 import android.content.Context;
 import android.databinding.BaseObservable;
