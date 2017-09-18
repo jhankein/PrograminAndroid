@@ -33,9 +33,9 @@ public class EventActivity extends AppCompatActivity implements Observer {
 
         initDataBinding();
         setSupportActionBar(eventActivityBinding.toolbar);
-        setupListPeopleView(eventActivityBinding.listEvent);
+        setupListEventView(eventActivityBinding.listEvent);
         setupObserver(eventViewModel);
-        eventViewModel.onClickFabLoad(null);
+        eventViewModel.fetchEventList();
     }
 
     private void initDataBinding() {
@@ -44,7 +44,7 @@ public class EventActivity extends AppCompatActivity implements Observer {
         eventActivityBinding.setMainViewModel(eventViewModel);
     }
 
-    private void setupListPeopleView(RecyclerView listPeople) {
+    private void setupListEventView(RecyclerView listPeople) {
         EventAdapter adapter = new EventAdapter();
         listPeople.setAdapter(adapter);
         listPeople.setLayoutManager(new LinearLayoutManager(this));

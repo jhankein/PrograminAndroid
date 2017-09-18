@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity  {
               //  view.setOnClickListener(new CreateUsersOnClickListener());
             }
         });
+
         // Referencia Botón
         Button botonAceptar = (Button) findViewById(R.id.btnLogin);
         botonAceptar.setOnClickListener(new View.OnClickListener() {

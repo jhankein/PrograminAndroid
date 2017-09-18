@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.saaibi.parcial.Domain.Event;
 import com.example.saaibi.parcial.Domain.User;
-import com.example.saaibi.parcial.Repository.EventContract;
-import com.example.saaibi.parcial.Repository.EventDbHelper;
+import com.example.saaibi.parcial.Repository.DBContract;
+import com.example.saaibi.parcial.Repository.DBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
  * Created by SAAIBI on 13/9/2017.
  */
 
-public class EventController extends EventDbHelper {
+public class EventController extends DBHelper {
 
     public EventController(Context context) {super(context);}
 
@@ -25,7 +25,7 @@ public class EventController extends EventDbHelper {
         System.out.println("Event: " + event.toContentValues());
 
         SQLiteDatabase db = this.getWritableDatabase();
-        boolean isCreate = db.insert(EventContract.EventEntry.TABLE_NAME, null, event.toContentValues()) > 0;
+        boolean isCreate = db.insert(DBContract.EventEntry.TABLE_NAME, null, event.toContentValues()) > 0;
         db.close();
         return isCreate ;
     }
@@ -33,7 +33,7 @@ public class EventController extends EventDbHelper {
     public Cursor getAllEvents() {
         return getReadableDatabase()
                 .query(
-                        EventContract.EventEntry.TABLE_NAME, null, null, null, null, null, null);
+                        DBContract.EventEntry.TABLE_NAME, null, null, null, null, null, null);
     }
 
     public boolean dropTable(){
@@ -82,7 +82,7 @@ public class EventController extends EventDbHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        boolean isUpdate = db.update(EventContract.EventEntry.TABLE_NAME, values,
+        boolean isUpdate = db.update(DBContract.EventEntry.TABLE_NAME, values,
                 where, whereArgs) > 0;
 
         db.close();
@@ -112,7 +112,7 @@ public class EventController extends EventDbHelper {
         boolean isDeleted = false;
 
         SQLiteDatabase db = this.getWritableDatabase();
-        isDeleted = db.delete(EventContract.EventEntry.TABLE_NAME, "id ='" + contatoID + "'", null) > 0;
+        isDeleted = db.delete(DBContract.EventEntry.TABLE_NAME, "id ='" + contatoID + "'", null) > 0;
         db.close();
 
         return isDeleted;

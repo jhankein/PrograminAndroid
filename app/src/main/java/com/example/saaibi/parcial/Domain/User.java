@@ -3,7 +3,7 @@ package com.example.saaibi.parcial.Domain;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.example.saaibi.parcial.Repository.UserContract;
+import com.example.saaibi.parcial.Repository.DBContract;
 
 /**
  * Created by SAAIBI on 10/9/2017.
@@ -29,22 +29,22 @@ public class User {
     }
 
     public User(Cursor cursor) {
-        userName = cursor.getString(cursor.getColumnIndex(UserContract.UserEntry.USER_NAME));
-        name = cursor.getString(cursor.getColumnIndex(UserContract.UserEntry.NAME));
-        lastName = cursor.getString(cursor.getColumnIndex(UserContract.UserEntry.LAST_NAME));
-        password = cursor.getString(cursor.getColumnIndex(UserContract.UserEntry.PASSWORD));
-        rol = cursor.getString(cursor.getColumnIndex(UserContract.UserEntry.ROL));
-        age = cursor.getInt(cursor.getColumnIndex(UserContract.UserEntry.AGE));
+        userName = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.USER_NAME));
+        name = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.NAME));
+        lastName = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.LAST_NAME));
+        password = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.PASSWORD));
+        rol = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.ROL));
+        age = cursor.getInt(cursor.getColumnIndex(DBContract.UserEntry.AGE));
     }
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put(UserContract.UserEntry.USER_NAME, getUserName());
-        values.put(UserContract.UserEntry.NAME, getName());
-        values.put(UserContract.UserEntry.LAST_NAME, getLastName());
-        values.put(UserContract.UserEntry.PASSWORD, getPassword());
-        values.put(UserContract.UserEntry.ROL, getRol());
-        values.put(UserContract.UserEntry.AGE, getAge());
+        values.put(DBContract.UserEntry.USER_NAME, getUserName());
+        values.put(DBContract.UserEntry.NAME, getName());
+        values.put(DBContract.UserEntry.LAST_NAME, getLastName());
+        values.put(DBContract.UserEntry.PASSWORD, getPassword());
+        values.put(DBContract.UserEntry.ROL, getRol());
+        values.put(DBContract.UserEntry.AGE, getAge());
         return values;
     }
 

@@ -3,12 +3,9 @@ package com.example.saaibi.parcial.Domain;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.google.gson.annotations.SerializedName;
-
-import com.example.saaibi.parcial.Repository.EventContract;
+import com.example.saaibi.parcial.Repository.DBContract;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by SAAIBI on 13/9/2017.
@@ -45,28 +42,28 @@ public class Event implements Serializable {
     }
 
     public Event (Cursor cursor) {
-        _id = cursor.getInt(cursor.getColumnIndex(EventContract.EventEntry._ID  ));
-        nameEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.NAME_EVENT  ));
-        tipeEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.TIPE_EVENT));
-        attenEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.ATTEN_EVENT));
-        cityEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.CITY_EVENT));
-        dateEvent = cursor.getString(cursor.getColumnIndexOrThrow(EventContract.EventEntry.DATE_EVENT));
-        hourEvent = cursor.getString(cursor.getColumnIndexOrThrow(EventContract.EventEntry.HOUR_EVENT));
-        requirementEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.REQUIREMENT_EVENT));
-        descriptionEvent = cursor.getString(cursor.getColumnIndex(EventContract.EventEntry.DESCRIPTION_EVENT));
+        _id = cursor.getInt(cursor.getColumnIndex(DBContract.EventEntry._ID  ));
+        nameEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.NAME_EVENT  ));
+        tipeEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.TIPE_EVENT));
+        attenEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.ATTEN_EVENT));
+        cityEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.CITY_EVENT));
+        dateEvent = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.EventEntry.DATE_EVENT));
+        hourEvent = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.EventEntry.HOUR_EVENT));
+        requirementEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.REQUIREMENT_EVENT));
+        descriptionEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.DESCRIPTION_EVENT));
     }
 
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put(EventContract.EventEntry.NAME_EVENT, getNameEvent());
-        values.put(EventContract.EventEntry.TIPE_EVENT, getTipeEvent());
-        values.put(EventContract.EventEntry.ATTEN_EVENT, getAttenEvent());
-        values.put(EventContract.EventEntry.CITY_EVENT, getCityEvent());
-        values.put(EventContract.EventEntry.DATE_EVENT, getDateEvent());
-        values.put(EventContract.EventEntry.HOUR_EVENT, getHourEvent());
-        values.put(EventContract.EventEntry.REQUIREMENT_EVENT, getRequirementEvent());
-        values.put(EventContract.EventEntry.DESCRIPTION_EVENT, getDescriptionEvent());
+        values.put(DBContract.EventEntry.NAME_EVENT, getNameEvent());
+        values.put(DBContract.EventEntry.TIPE_EVENT, getTipeEvent());
+        values.put(DBContract.EventEntry.ATTEN_EVENT, getAttenEvent());
+        values.put(DBContract.EventEntry.CITY_EVENT, getCityEvent());
+        values.put(DBContract.EventEntry.DATE_EVENT, getDateEvent());
+        values.put(DBContract.EventEntry.HOUR_EVENT, getHourEvent());
+        values.put(DBContract.EventEntry.REQUIREMENT_EVENT, getRequirementEvent());
+        values.put(DBContract.EventEntry.DESCRIPTION_EVENT, getDescriptionEvent());
         return values;
     }
 

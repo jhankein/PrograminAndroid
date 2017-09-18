@@ -37,14 +37,17 @@ public class EventViewModel extends Observable {
     }
 
     public void fetchEventList() {
+        eventRecycler.set(View.GONE);
         appController = new EventController(context);
         changeEventDataSet(appController.fillEvents());
         eventRecycler.set(View.VISIBLE);
     }
 
     private void changeEventDataSet(List<Event> events) {
-        eventList.addAll(events);
-        System.out.println("lista: " + eventList);
+        if (!events.isEmpty())
+            eventList.addAll(events);
+            System.out.println("lista: " + eventList);
+        System.out.println("listav: ");
         setChanged();
         notifyObservers();
     }

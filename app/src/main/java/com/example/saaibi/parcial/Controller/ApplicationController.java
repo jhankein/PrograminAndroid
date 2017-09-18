@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.example.saaibi.parcial.Domain.User;
-import com.example.saaibi.parcial.Repository.UsersDbHelper;
+import com.example.saaibi.parcial.Repository.DBHelper;
 import com.example.saaibi.parcial.Views.EventActivity;
 import com.example.saaibi.parcial.Views.AdminActivity;
 
@@ -20,19 +20,19 @@ import java.util.List;
 
 public class ApplicationController extends Application {
     private List<User> users;
-    private UsersDbHelper usersDbHelper;
+    private DBHelper DBHelper;
     private String rol;
     public ApplicationController() {
         users = new ArrayList<User>();
     }
 
     public void authenticate(String username, String password) {
-        usersDbHelper = new UsersDbHelper(this.getApplicationContext());
+        DBHelper = new DBHelper(this.getApplicationContext());
         new AuthenticTask().execute(username, password);
     }
 
     public void userCreate() {
-        User person3 = new User("user", "user", "user", "1234", "User", 21);
+        User person3 = new User("yesid", "Yesid", "Florez", "1234", "user", 21);
         boolean usersCreate = new UserController(this.getApplicationContext()).create(person3);
         if (usersCreate)
             Toast.makeText(getApplicationContext(), "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();

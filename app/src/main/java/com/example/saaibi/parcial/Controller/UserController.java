@@ -6,15 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.saaibi.parcial.Domain.User;
-import com.example.saaibi.parcial.Repository.UserContract;
-import com.example.saaibi.parcial.Repository.UsersDbHelper;
+import com.example.saaibi.parcial.Repository.DBContract;
+import com.example.saaibi.parcial.Repository.DBHelper;
 
 
 /**
  * Created by SAAIBI on 10/9/2017.
  */
 
-public class UserController extends UsersDbHelper {
+public class UserController extends DBHelper {
 
     public UserController(Context context) {
         super(context);
@@ -25,7 +25,7 @@ public class UserController extends UsersDbHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        boolean isCreate = db.insert(UserContract.UserEntry.TABLE_NAME, null, user.toContentValues()) > 0;
+        boolean isCreate = db.insert(DBContract.UserEntry.TABLE_NAME, null, user.toContentValues()) > 0;
 
         db.close();
         return isCreate;
@@ -34,7 +34,7 @@ public class UserController extends UsersDbHelper {
     public Cursor getAllUsers() {
         return getReadableDatabase()
                 .query(
-                        UserContract.UserEntry.TABLE_NAME, null, null, null, null, null, null);
+                        DBContract.UserEntry.TABLE_NAME, null, null, null, null, null, null);
     }
 
 
@@ -56,7 +56,7 @@ public class UserController extends UsersDbHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        boolean isUpdate = db.update(UserContract.UserEntry.TABLE_NAME, values,
+        boolean isUpdate = db.update(DBContract.UserEntry.TABLE_NAME, values,
                 where, whereArgs) > 0;
 
         db.close();
@@ -75,20 +75,4 @@ public class UserController extends UsersDbHelper {
         return isDeletado;
 
     }
-
-
-
 }
-
-
-    /*
-    public long addUser(User user) {
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        return sqLiteDatabase.insert(
-                UserContract.UserEntry.TABLE_NAME,
-                null,
-                user.toContentValues());
-
-    }
-*/
-
