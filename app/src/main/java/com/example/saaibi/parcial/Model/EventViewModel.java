@@ -39,7 +39,16 @@ public class EventViewModel extends Observable {
     public void fetchEventList() {
         eventRecycler.set(View.GONE);
         appController = new EventController(context);
+        eventList.clear();
         changeEventDataSet(appController.fillEvents());
+        eventRecycler.set(View.VISIBLE);
+    }
+
+    public void TipoBuscar(String tipo) {
+        eventRecycler.set(View.GONE);
+        eventList.clear();
+        appController = new EventController(context);
+        changeEventDataSet(appController.filtrarporTipo(tipo));
         eventRecycler.set(View.VISIBLE);
     }
 

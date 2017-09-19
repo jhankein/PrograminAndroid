@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -77,10 +78,26 @@ public class EventActivity extends AppCompatActivity implements Observer,View.On
         arrayadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiTipeEvent.setAdapter(arrayadapter);
 
+        spiTipeEvent.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view,
+                                       int position, long id) {
+                eventViewModel.TipoBuscar(adapterView.getItemAtPosition(position).toString());
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+
+            }
+        });
         setSupportActionBar(eventActivityBinding.toolbar);
         setupListEventView(eventActivityBinding.listEvent);
         setupObserver(eventViewModel);
-        eventViewModel.fetchEventList();
+
     }
 
     private void initDataBinding() {

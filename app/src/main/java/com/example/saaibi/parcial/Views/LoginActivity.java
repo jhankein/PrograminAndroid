@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         appController =(ApplicationController)getApplication();
         tilNombre = (TextInputLayout) findViewById(R.id.til_nombre);
         tilPassword = (TextInputLayout) findViewById(R.id.til_password);
@@ -40,6 +41,8 @@ public class LoginActivity extends AppCompatActivity  {
                  view.setOnClickListener(new CreateUsersOnClickListener());
             }
         });
+
+
 
         Button botonAceptar = (Button) findViewById(R.id.btnLogin);
         botonAceptar.setOnClickListener(new View.OnClickListener() {
